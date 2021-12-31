@@ -66,9 +66,9 @@ func (c *controller) runApp(app App) {
 	done := uint32(0)
 
 	go func() {
-		if err := app.Start(); err != nil {
-			atomic.StoreUint32(&done, 1)
-
+		err := app.Start()
+		atomic.StoreUint32(&done, 1)
+		if err != nil {
 			select {
 			case c.errch <- err:
 			default:
