@@ -2,6 +2,8 @@
 
 Golang application lifecycle manager.
 
+**Note: This is not an official Daangn project**
+
 # Usage
 
 ```go
